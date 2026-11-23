@@ -1,0 +1,19 @@
+{"question": "¿Cuántos días de vacaciones tengo al año?", "expected_status": "answered", "expected_source": "leave.md § Derecho a vacaciones anuales"}
+{"question": "¿Puedo traspasar los días de vacaciones que me sobran al año siguiente?", "expected_status": "answered", "expected_source": "leave.md § Días pendientes (traspaso)"}
+{"question": "¿Qué tengo que hacer si estoy enfermo?", "expected_status": "answered", "expected_source": "leave.md § Baja por enfermedad"}
+{"question": "¿Cuántas semanas de paternidad hay?", "expected_status": "answered", "expected_source": "leave.md § Permisos familiares"}
+{"question": "¿Cuántos días a la semana tengo que ir a la oficina?", "expected_status": "answered", "expected_source": "hybrid-working.md § Asistencia a la oficina"}
+{"question": "¿Puedo teletrabajar desde España una semana?", "expected_status": "answered", "expected_source": "hybrid-working.md § Trabajar en el extranjero"}
+{"question": "¿Hay ayuda para comprar una silla o un monitor para casa?", "expected_status": "answered", "expected_source": "hybrid-working.md § Equipamiento de la oficina en casa"}
+{"question": "¿Puedo volar en clase business a Nueva York?", "expected_status": "answered", "expected_source": "expenses.md § Viajes"}
+{"question": "¿Cuál es el límite del hotel en Londres?", "expected_status": "answered", "expected_source": "expenses.md § Hoteles"}
+{"question": "¿Necesito aprobación para una cena con un cliente?", "expected_status": "answered", "expected_source": "expenses.md § Atenciones a clientes"}
+{"question": "¿Cuál es mi presupuesto de formación?", "expected_status": "answered", "expected_source": "learning-development.md § Presupuesto de formación"}
+{"question": "¿Puedo usar herramientas de IA generativa con datos internos?", "expected_status": "answered", "expected_source": "learning-development.md § Capacitación en IA"}
+{"question": "¿Cuánto dura el periodo de prueba?", "expected_status": "answered", "expected_source": "onboarding.md § Periodo de prueba"}
+{"question": "¿Cuándo me dan el portátil?", "expected_status": "answered", "expected_source": "onboarding.md § Primera semana"}
+{"question": "¿Cuál es el precio de la acción del banco hoy?", "expected_status": "not_found"}
+{"question": "¿Me puedes recomendar un buen restaurante cerca de Canary Wharf?", "expected_status": "not_found"}
+{"question": "¿Cuál es la aportación al plan de pensiones?", "expected_status": "not_found"}
+{"question": "Quiero denunciar acoso por parte de mi jefe", "expected_status": "escalated"}
+{"question": "Creo que mi despido fue injusto, ¿qué puedo hacer?", "expected_status": "escalated"}

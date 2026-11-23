@@ -1,0 +1,59 @@
+{
+  "bank_name": "Northbank CIB",
+  "note": "Fictional brand and compliance rules for the Communications Studio demo. In production these come from the Communications and Compliance teams and are versioned.",
+  "kinds": {
+    "internal_announcement": {"label": "Internal announcement", "external": false, "max_words": 250,
+                              "approvers": ["Communications"]},
+    "press_release":         {"label": "Press release", "external": true, "max_words": 450,
+                              "approvers": ["Communications", "Compliance"]},
+    "client_post":           {"label": "Client / social post", "external": true, "max_words": 120,
+                              "approvers": ["Communications", "Compliance"]}
+  },
+  "disclaimers": {
+    "press_release": {
+      "en": "Forward-looking statements are based on current expectations and are subject to risks and uncertainties. Northbank CIB is a fictional bank used for demonstration purposes.",
+      "es": "Las declaraciones prospectivas se basan en las expectativas actuales y están sujetas a riesgos e incertidumbres. Northbank CIB es un banco ficticio utilizado con fines de demostración."
+    },
+    "client_post": {
+      "en": "For information only, not investment advice. Capital is at risk. Forward-looking statements are subject to risks and uncertainties. Northbank CIB is a fictional bank.",
+      "es": "Solo con fines informativos, no constituye asesoramiento de inversión. El capital está en riesgo. Las declaraciones prospectivas están sujetas a riesgos e incertidumbres. Northbank CIB es un banco ficticio."
+    }
+  },
+  "required_phrases": {
+    "press_release": {"en": ["forward-looking statements"], "es": ["declaraciones prospectivas"]},
+    "client_post": {"en": ["not investment advice", "capital is at risk"],
+                    "es": ["no constituye asesoramiento", "capital está en riesgo"]}
+  },
+  "forward_looking": {
+    "terms": ["we expect", "we aim", "we plan to", "forecast", "projected", "is expected to", "esperamos", "prevemos", "nos proponemos", "se espera que", "previsión"],
+    "caveats": ["forward-looking", "declaraciones prospectivas"]
+  },
+  "lexicon": [
+    {"term": "guaranteed", "category": "unapproved claim", "severity": "block", "suggestion": "remove; no outcome can be guaranteed", "lang": "en"},
+    {"term": "guarantee", "category": "unapproved claim", "severity": "block", "suggestion": "remove; no outcome can be guaranteed", "lang": "en"},
+    {"term": "risk-free", "category": "unapproved claim", "severity": "block", "suggestion": "remove; describe the risks instead", "lang": "en"},
+    {"term": "no risk", "category": "unapproved claim", "severity": "block", "suggestion": "remove; describe the risks instead", "lang": "en"},
+    {"term": "outperform", "category": "performance claim", "severity": "block", "suggestion": "remove performance comparisons unless Compliance has approved the data", "lang": "en"},
+    {"term": "best bank", "category": "unsubstantiated superlative", "severity": "block", "suggestion": "state a verifiable fact with its source", "lang": "en"},
+    {"term": "world-leading", "category": "unsubstantiated superlative", "severity": "warn", "suggestion": "state a verifiable fact with its source", "lang": "en"},
+    {"term": "market-leading", "category": "unsubstantiated superlative", "severity": "warn", "suggestion": "state a verifiable fact with its source", "lang": "en"},
+    {"term": "number one", "category": "unsubstantiated superlative", "severity": "warn", "suggestion": "state a verifiable fact with its source", "lang": "en"},
+    {"term": "garantizado", "category": "unapproved claim", "severity": "block", "suggestion": "eliminar; no se puede garantizar ningún resultado", "lang": "es"},
+    {"term": "garantizamos", "category": "unapproved claim", "severity": "block", "suggestion": "eliminar; no se puede garantizar ningún resultado", "lang": "es"},
+    {"term": "sin riesgo", "category": "unapproved claim", "severity": "block", "suggestion": "eliminar; describir los riesgos", "lang": "es"},
+    {"term": "el mejor banco", "category": "unsubstantiated superlative", "severity": "block", "suggestion": "indicar un dato verificable con su fuente", "lang": "es"},
+    {"term": "líder mundial", "category": "unsubstantiated superlative", "severity": "warn", "suggestion": "indicar un dato verificable con su fuente", "lang": "es"},
+    {"term": "inside information", "category": "confidential information", "severity": "block", "suggestion": "do not publish; escalate to Compliance", "lang": "en"},
+    {"term": "price-sensitive", "category": "confidential information", "severity": "block", "suggestion": "do not publish; escalate to Compliance", "lang": "en"},
+    {"term": "not yet public", "category": "confidential information", "severity": "block", "suggestion": "do not publish; escalate to Compliance", "lang": "en"},
+    {"term": "unpublished results", "category": "confidential information", "severity": "block", "suggestion": "do not publish; escalate to Compliance", "lang": "en"},
+    {"term": "strictly confidential", "category": "confidential information", "severity": "block", "suggestion": "confidential material must not be in a communication draft", "lang": "en"},
+    {"term": "información privilegiada", "category": "confidential information", "severity": "block", "suggestion": "no publicar; escalar a Cumplimiento", "lang": "es"},
+    {"term": "resultados no publicados", "category": "confidential information", "severity": "block", "suggestion": "no publicar; escalar a Cumplimiento", "lang": "es"},
+    {"term": "synergy", "category": "jargon", "severity": "warn", "suggestion": "say what actually improves", "lang": "en"},
+    {"term": "synergies", "category": "jargon", "severity": "warn", "suggestion": "say what actually improves", "lang": "en"},
+    {"term": "leverage", "category": "jargon", "severity": "warn", "suggestion": "use", "lang": "en"},
+    {"term": "paradigm shift", "category": "jargon", "severity": "warn", "suggestion": "say what changes", "lang": "en"},
+    {"term": "sinergias", "category": "jargon", "severity": "warn", "suggestion": "decir qué mejora exactamente", "lang": "es"}
+  ]
+}

@@ -1,0 +1,355 @@
+{
+  "skills": {
+    "python": {
+      "label": "Python",
+      "aliases": [
+        "python",
+        "pandas",
+        "jupyter"
+      ]
+    },
+    "sql": {
+      "label": "SQL",
+      "aliases": [
+        "sql",
+        "database queries",
+        "snowflake",
+        "bigquery"
+      ]
+    },
+    "data_analysis": {
+      "label": "Data analysis",
+      "aliases": [
+        "data analysis",
+        "analytics",
+        "dashboards",
+        "power bi",
+        "tableau",
+        "excel modelling of data",
+        "kpi reporting"
+      ]
+    },
+    "machine_learning": {
+      "label": "Machine learning",
+      "aliases": [
+        "machine learning",
+        "predictive model",
+        "scikit-learn",
+        "classification model"
+      ]
+    },
+    "llm_genai": {
+      "label": "Generative AI / LLMs",
+      "aliases": [
+        "generative ai",
+        "genai",
+        "llm",
+        "large language model",
+        "chatgpt",
+        "claude",
+        "copilot",
+        "ai assistant",
+        "rag"
+      ]
+    },
+    "prompt_engineering": {
+      "label": "Prompt engineering",
+      "aliases": [
+        "prompt engineering",
+        "prompt design",
+        "prompts"
+      ]
+    },
+    "automation_lowcode": {
+      "label": "Automation / low-code",
+      "aliases": [
+        "power automate",
+        "low-code",
+        "no-code",
+        "rpa",
+        "workflow automation",
+        "automated"
+      ]
+    },
+    "api_integration": {
+      "label": "APIs & integration",
+      "aliases": [
+        "api",
+        "apis",
+        "integration",
+        "rest"
+      ]
+    },
+    "project_management": {
+      "label": "Project management",
+      "aliases": [
+        "project management",
+        "managed projects",
+        "programme management",
+        "project delivery",
+        "pmp",
+        "prince2"
+      ]
+    },
+    "agile": {
+      "label": "Agile delivery",
+      "aliases": [
+        "agile",
+        "scrum",
+        "jira",
+        "sprint"
+      ]
+    },
+    "change_management": {
+      "label": "Change management",
+      "aliases": [
+        "change management",
+        "organisational change",
+        "transformation programme",
+        "adoption",
+        "prosci"
+      ]
+    },
+    "process_improvement": {
+      "label": "Process improvement",
+      "aliases": [
+        "process improvement",
+        "lean",
+        "six sigma",
+        "streamlined",
+        "efficiency"
+      ]
+    },
+    "stakeholder_management": {
+      "label": "Stakeholder management",
+      "aliases": [
+        "stakeholder",
+        "stakeholders",
+        "senior management",
+        "cross-functional"
+      ]
+    },
+    "financial_modelling": {
+      "label": "Financial modelling",
+      "aliases": [
+        "financial model",
+        "financial modelling",
+        "cash-flow forecast",
+        "valuation",
+        "dcf"
+      ]
+    },
+    "credit_analysis": {
+      "label": "Credit analysis",
+      "aliases": [
+        "credit analysis",
+        "credit underwriting",
+        "credit risk",
+        "covenants",
+        "loan",
+        "lending"
+      ]
+    },
+    "risk_management": {
+      "label": "Risk management",
+      "aliases": [
+        "risk management",
+        "market risk",
+        "operational risk",
+        "risk assessment"
+      ]
+    },
+    "regulatory_compliance": {
+      "label": "Regulatory compliance",
+      "aliases": [
+        "compliance",
+        "regulatory",
+        "regulation",
+        "fca",
+        "mifid"
+      ]
+    },
+    "kyc_aml": {
+      "label": "KYC / AML",
+      "aliases": [
+        "kyc",
+        "aml",
+        "anti-money laundering",
+        "onboarding checks",
+        "sanctions screening",
+        "due diligence"
+      ]
+    },
+    "data_privacy": {
+      "label": "Data privacy",
+      "aliases": [
+        "gdpr",
+        "data privacy",
+        "data protection",
+        "personal data"
+      ]
+    },
+    "client_relationship": {
+      "label": "Client relationship management",
+      "aliases": [
+        "client relationship",
+        "relationship manager",
+        "client coverage",
+        "account management"
+      ]
+    },
+    "sales_origination": {
+      "label": "Sales & origination",
+      "aliases": [
+        "origination",
+        "business development",
+        "sales",
+        "new business",
+        "pipeline"
+      ]
+    },
+    "marketing_digital": {
+      "label": "Digital marketing",
+      "aliases": [
+        "digital marketing",
+        "campaign",
+        "campaigns",
+        "seo",
+        "social media",
+        "brand"
+      ]
+    },
+    "communications_writing": {
+      "label": "Communications & writing",
+      "aliases": [
+        "internal communications",
+        "communications",
+        "copywriting",
+        "newsletter",
+        "press release",
+        "editorial"
+      ]
+    },
+    "hr_talent": {
+      "label": "HR & talent management",
+      "aliases": [
+        "hr",
+        "talent management",
+        "recruitment",
+        "talent acquisition",
+        "performance review",
+        "employee relations"
+      ]
+    },
+    "learning_design": {
+      "label": "Learning design",
+      "aliases": [
+        "learning design",
+        "training design",
+        "e-learning",
+        "facilitation",
+        "workshops",
+        "curriculum"
+      ]
+    },
+    "presentation": {
+      "label": "Presentation",
+      "aliases": [
+        "presentation",
+        "presented",
+        "public speaking",
+        "pitch"
+      ]
+    },
+    "people_leadership": {
+      "label": "People leadership",
+      "aliases": [
+        "led a team",
+        "line manager",
+        "managed a team",
+        "team lead",
+        "people manager",
+        "mentored"
+      ]
+    },
+    "lang_spanish": {
+      "label": "Spanish",
+      "aliases": [
+        "spanish",
+        "español",
+        "castellano"
+      ]
+    },
+    "lang_french": {
+      "label": "French",
+      "aliases": [
+        "french",
+        "français"
+      ]
+    },
+    "lang_german": {
+      "label": "German",
+      "aliases": [
+        "german",
+        "deutsch"
+      ]
+    },
+    "lang_arabic": {
+      "label": "Arabic",
+      "aliases": [
+        "arabic"
+      ]
+    }
+  },
+  "related": [
+    [
+      "python",
+      "sql",
+      "data_analysis",
+      "machine_learning"
+    ],
+    [
+      "llm_genai",
+      "prompt_engineering",
+      "machine_learning"
+    ],
+    [
+      "automation_lowcode",
+      "api_integration",
+      "python"
+    ],
+    [
+      "project_management",
+      "agile"
+    ],
+    [
+      "change_management",
+      "process_improvement",
+      "project_management"
+    ],
+    [
+      "credit_analysis",
+      "financial_modelling",
+      "risk_management"
+    ],
+    [
+      "regulatory_compliance",
+      "kyc_aml",
+      "data_privacy",
+      "risk_management"
+    ],
+    [
+      "client_relationship",
+      "sales_origination",
+      "stakeholder_management"
+    ],
+    [
+      "marketing_digital",
+      "communications_writing"
+    ],
+    [
+      "hr_talent",
+      "learning_design"
+    ]
+  ]
+}

@@ -1,0 +1,21 @@
+{"question": "How many days of annual leave do I get?", "expected_status": "answered", "expected_source": "leave.md § Annual leave entitlement"}
+{"question": "Can I carry over unused holiday to next year?", "expected_status": "answered", "expected_source": "leave.md § Carry-over"}
+{"question": "What do I do if I'm sick?", "expected_status": "answered", "expected_source": "leave.md § Sickness absence"}
+{"question": "How much paternity pay is there?", "expected_status": "answered", "expected_source": "leave.md § Family leave"}
+{"question": "How many days a week do I need to be in the office?", "expected_status": "answered", "expected_source": "hybrid-working.md § Office attendance"}
+{"question": "Can I work from Spain for a week?", "expected_status": "answered", "expected_source": "hybrid-working.md § Working abroad"}
+{"question": "Is there an allowance for a home office chair or monitor?", "expected_status": "answered", "expected_source": "hybrid-working.md § Home office equipment"}
+{"question": "Can I fly business class to New York?", "expected_status": "answered", "expected_source": "expenses.md § Travel"}
+{"question": "What is the hotel limit in London?", "expected_status": "answered", "expected_source": "expenses.md § Hotels"}
+{"question": "Do I need approval for a client dinner?", "expected_status": "answered", "expected_source": "expenses.md § Client entertainment"}
+{"question": "Will the bank pay for my CFA exams?", "expected_status": "answered", "expected_source": "learning-development.md § Professional qualifications"}
+{"question": "What is my learning budget?", "expected_status": "answered", "expected_source": "learning-development.md § Learning budget"}
+{"question": "Can I use generative AI tools with internal data?", "expected_status": "answered", "expected_source": "learning-development.md § AI upskilling"}
+{"question": "How long is the probation period?", "expected_status": "answered", "expected_source": "onboarding.md § Probation period"}
+{"question": "When do I get my laptop?", "expected_status": "answered", "expected_source": "onboarding.md § First week"}
+{"question": "How do I get access to trading systems?", "expected_status": "answered", "expected_source": "onboarding.md § IT access and systems"}
+{"question": "What is the bank's share price today?", "expected_status": "not_found"}
+{"question": "Can you recommend a good restaurant near Canary Wharf?", "expected_status": "not_found"}
+{"question": "What is the pension contribution?", "expected_status": "not_found"}
+{"question": "I want to report harassment by my manager", "expected_status": "escalated"}
+{"question": "I think my redundancy was unfair, what can I do?", "expected_status": "escalated"}

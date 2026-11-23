@@ -1,0 +1,292 @@
+{
+ "note": "Synthetic adoption and impact data for the dashboard demo. In production this comes from tool usage logs, surveys and the incident register.",
+ "months": [
+  "2026-06",
+  "2026-07",
+  "2026-08",
+  "2026-09",
+  "2026-10",
+  "2026-11"
+ ],
+ "records": [
+  {
+   "uc": "UC01",
+   "month": "2026-06",
+   "eligible": 1200,
+   "active": 90,
+   "hours_saved": 60,
+   "satisfaction": 4.0,
+   "incidents": 0
+  },
+  {
+   "uc": "UC01",
+   "month": "2026-07",
+   "eligible": 1200,
+   "active": 210,
+   "hours_saved": 140,
+   "satisfaction": 4.1,
+   "incidents": 0
+  },
+  {
+   "uc": "UC01",
+   "month": "2026-08",
+   "eligible": 1200,
+   "active": 330,
+   "hours_saved": 250,
+   "satisfaction": 4.2,
+   "incidents": 0
+  },
+  {
+   "uc": "UC01",
+   "month": "2026-09",
+   "eligible": 1200,
+   "active": 420,
+   "hours_saved": 330,
+   "satisfaction": 4.3,
+   "incidents": 0
+  },
+  {
+   "uc": "UC01",
+   "month": "2026-10",
+   "eligible": 1200,
+   "active": 480,
+   "hours_saved": 400,
+   "satisfaction": 4.3,
+   "incidents": 0
+  },
+  {
+   "uc": "UC01",
+   "month": "2026-11",
+   "eligible": 1200,
+   "active": 530,
+   "hours_saved": 455,
+   "satisfaction": 4.4,
+   "incidents": 0
+  },
+  {
+   "uc": "UC02",
+   "month": "2026-07",
+   "eligible": 900,
+   "active": 40,
+   "hours_saved": 25,
+   "satisfaction": 3.9,
+   "incidents": 0
+  },
+  {
+   "uc": "UC02",
+   "month": "2026-08",
+   "eligible": 900,
+   "active": 95,
+   "hours_saved": 70,
+   "satisfaction": 4.0,
+   "incidents": 0
+  },
+  {
+   "uc": "UC02",
+   "month": "2026-09",
+   "eligible": 900,
+   "active": 150,
+   "hours_saved": 130,
+   "satisfaction": 4.1,
+   "incidents": 0
+  },
+  {
+   "uc": "UC02",
+   "month": "2026-10",
+   "eligible": 900,
+   "active": 210,
+   "hours_saved": 190,
+   "satisfaction": 4.2,
+   "incidents": 0
+  },
+  {
+   "uc": "UC02",
+   "month": "2026-11",
+   "eligible": 900,
+   "active": 260,
+   "hours_saved": 240,
+   "satisfaction": 4.2,
+   "incidents": 0
+  },
+  {
+   "uc": "UC03",
+   "month": "2026-07",
+   "eligible": 140,
+   "active": 12,
+   "hours_saved": 30,
+   "satisfaction": 3.8,
+   "incidents": 0
+  },
+  {
+   "uc": "UC03",
+   "month": "2026-08",
+   "eligible": 140,
+   "active": 26,
+   "hours_saved": 75,
+   "satisfaction": 3.9,
+   "incidents": 0
+  },
+  {
+   "uc": "UC03",
+   "month": "2026-09",
+   "eligible": 140,
+   "active": 38,
+   "hours_saved": 120,
+   "satisfaction": 4.1,
+   "incidents": 0
+  },
+  {
+   "uc": "UC03",
+   "month": "2026-10",
+   "eligible": 140,
+   "active": 47,
+   "hours_saved": 160,
+   "satisfaction": 4.1,
+   "incidents": 0
+  },
+  {
+   "uc": "UC03",
+   "month": "2026-11",
+   "eligible": 140,
+   "active": 55,
+   "hours_saved": 190,
+   "satisfaction": 4.2,
+   "incidents": 0
+  },
+  {
+   "uc": "UC04",
+   "month": "2026-07",
+   "eligible": 25,
+   "active": 3,
+   "hours_saved": 2,
+   "satisfaction": 3.6,
+   "incidents": 0
+  },
+  {
+   "uc": "UC04",
+   "month": "2026-08",
+   "eligible": 25,
+   "active": 5,
+   "hours_saved": 4,
+   "satisfaction": 3.8,
+   "incidents": 0
+  },
+  {
+   "uc": "UC04",
+   "month": "2026-09",
+   "eligible": 25,
+   "active": 6,
+   "hours_saved": 5,
+   "satisfaction": 3.9,
+   "incidents": 0
+  },
+  {
+   "uc": "UC04",
+   "month": "2026-10",
+   "eligible": 25,
+   "active": 6,
+   "hours_saved": 6,
+   "satisfaction": 4.0,
+   "incidents": 0
+  },
+  {
+   "uc": "UC04",
+   "month": "2026-11",
+   "eligible": 25,
+   "active": 7,
+   "hours_saved": 6,
+   "satisfaction": 4.0,
+   "incidents": 0
+  },
+  {
+   "uc": "UC05",
+   "month": "2026-06",
+   "eligible": 60,
+   "active": 10,
+   "hours_saved": 20,
+   "satisfaction": 4.2,
+   "incidents": 0
+  },
+  {
+   "uc": "UC05",
+   "month": "2026-07",
+   "eligible": 60,
+   "active": 22,
+   "hours_saved": 50,
+   "satisfaction": 4.3,
+   "incidents": 0
+  },
+  {
+   "uc": "UC05",
+   "month": "2026-08",
+   "eligible": 60,
+   "active": 31,
+   "hours_saved": 85,
+   "satisfaction": 4.3,
+   "incidents": 0
+  },
+  {
+   "uc": "UC05",
+   "month": "2026-09",
+   "eligible": 60,
+   "active": 38,
+   "hours_saved": 110,
+   "satisfaction": 4.4,
+   "incidents": 0
+  },
+  {
+   "uc": "UC05",
+   "month": "2026-10",
+   "eligible": 60,
+   "active": 41,
+   "hours_saved": 125,
+   "satisfaction": 4.4,
+   "incidents": 0
+  },
+  {
+   "uc": "UC05",
+   "month": "2026-11",
+   "eligible": 60,
+   "active": 44,
+   "hours_saved": 140,
+   "satisfaction": 4.5,
+   "incidents": 0
+  },
+  {
+   "uc": "UC06",
+   "month": "2026-08",
+   "eligible": 35,
+   "active": 6,
+   "hours_saved": 25,
+   "satisfaction": 3.6,
+   "incidents": 0
+  },
+  {
+   "uc": "UC06",
+   "month": "2026-09",
+   "eligible": 35,
+   "active": 10,
+   "hours_saved": 50,
+   "satisfaction": 3.8,
+   "incidents": 1
+  },
+  {
+   "uc": "UC06",
+   "month": "2026-10",
+   "eligible": 35,
+   "active": 13,
+   "hours_saved": 70,
+   "satisfaction": 3.9,
+   "incidents": 0
+  },
+  {
+   "uc": "UC06",
+   "month": "2026-11",
+   "eligible": 35,
+   "active": 15,
+   "hours_saved": 85,
+   "satisfaction": 4.0,
+   "incidents": 0
+  }
+ ]
+}

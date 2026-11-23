@@ -1,0 +1,356 @@
+{
+ "note": "Fictional use-case register for the AI portfolio view. Scores are 1-5 and are set with business owners; risk 5 is highest.",
+ "assumptions": {
+  "loaded_hourly_cost_gbp": 55,
+  "weights": {
+   "impact": 0.4,
+   "feasibility": 0.3,
+   "scalability": 0.3
+  },
+  "risk_penalty_per_point": 5,
+  "wave1_min": 70,
+  "wave2_min": 55
+ },
+ "use_cases": [
+  {
+   "id": "UC01",
+   "name": "HR Policy Assistant (EN/ES)",
+   "function": "Talent & Culture",
+   "scope": "Global",
+   "stage": "live",
+   "description": "Answers employee policy questions only from approved policies, with sources and escalation of sensitive cases.",
+   "impact": 4,
+   "feasibility": 5,
+   "scalability": 4,
+   "risk": 2,
+   "eu_ai_act": "limited",
+   "dpia_done": true,
+   "human_in_loop": true,
+   "est_hours_saved_month": 700,
+   "build_cost_gbp": 38000,
+   "run_cost_gbp_year": 24000,
+   "module": "policy_assistant",
+   "live_regions": [
+    "UK"
+   ],
+   "planned_regions": [
+    "Spain",
+    "Germany",
+    "US"
+   ]
+  },
+  {
+   "id": "UC02",
+   "name": "Internal Mobility Copilot",
+   "function": "Talent & Culture",
+   "scope": "Global",
+   "stage": "pilot",
+   "description": "Skills-based matching of employees to internal roles with explainable scores and learning plans.",
+   "impact": 5,
+   "feasibility": 4,
+   "scalability": 5,
+   "risk": 4,
+   "eu_ai_act": "high",
+   "dpia_done": true,
+   "human_in_loop": true,
+   "est_hours_saved_month": 520,
+   "build_cost_gbp": 65000,
+   "run_cost_gbp_year": 30000,
+   "module": "mobility",
+   "live_regions": [
+    "UK"
+   ],
+   "planned_regions": [
+    "Spain",
+    "US"
+   ]
+  },
+  {
+   "id": "UC03",
+   "name": "Recruiting Workflow (advert, interview kit, scorecards)",
+   "function": "Talent & Culture",
+   "scope": "Local UK",
+   "stage": "pilot",
+   "description": "Drafts adverts, checks inclusive language, builds structured interview kits; people decide.",
+   "impact": 4,
+   "feasibility": 4,
+   "scalability": 4,
+   "risk": 4,
+   "eu_ai_act": "high",
+   "dpia_done": true,
+   "human_in_loop": true,
+   "est_hours_saved_month": 380,
+   "build_cost_gbp": 52000,
+   "run_cost_gbp_year": 26000,
+   "module": "recruiting",
+   "live_regions": [
+    "UK"
+   ],
+   "planned_regions": [
+    "Spain",
+    "Global"
+   ]
+  },
+  {
+   "id": "UC04",
+   "name": "Shortlist Fairness Audit",
+   "function": "Talent & Culture",
+   "scope": "Global",
+   "stage": "pilot",
+   "description": "Adverse-impact check on shortlists using separately held diversity data.",
+   "impact": 3,
+   "feasibility": 4,
+   "scalability": 4,
+   "risk": 2,
+   "eu_ai_act": "limited",
+   "dpia_done": true,
+   "human_in_loop": true,
+   "est_hours_saved_month": 12,
+   "build_cost_gbp": 18000,
+   "run_cost_gbp_year": 6000,
+   "module": "fairness",
+   "live_regions": [
+    "UK"
+   ],
+   "planned_regions": [
+    "Global"
+   ]
+  },
+  {
+   "id": "UC05",
+   "name": "Internal Announcement Drafting",
+   "function": "Communications",
+   "scope": "Local UK",
+   "stage": "live",
+   "description": "Drafts internal announcements in EN/ES with tone and compliance checks; Communications approves.",
+   "impact": 3,
+   "feasibility": 5,
+   "scalability": 4,
+   "risk": 1,
+   "eu_ai_act": "limited",
+   "dpia_done": true,
+   "human_in_loop": true,
+   "est_hours_saved_month": 160,
+   "build_cost_gbp": 12000,
+   "run_cost_gbp_year": 8000,
+   "module": "comms",
+   "live_regions": [
+    "UK"
+   ],
+   "planned_regions": [
+    "Spain",
+    "Global"
+   ]
+  },
+  {
+   "id": "UC06",
+   "name": "External Press Release and Client Post Drafting",
+   "function": "Communications",
+   "scope": "Global",
+   "stage": "pilot",
+   "description": "Drafts external comms with disclaimer, claims and confidentiality checks; Communications and Compliance both approve.",
+   "impact": 4,
+   "feasibility": 4,
+   "scalability": 3,
+   "risk": 3,
+   "eu_ai_act": "limited",
+   "dpia_done": true,
+   "human_in_loop": true,
+   "est_hours_saved_month": 210,
+   "build_cost_gbp": 30000,
+   "run_cost_gbp_year": 15000,
+   "module": "comms",
+   "live_regions": [
+    "UK"
+   ],
+   "planned_regions": [
+    "Global"
+   ]
+  },
+  {
+   "id": "UC07",
+   "name": "EN/ES Translation and Localisation of Comms",
+   "function": "Communications",
+   "scope": "Global",
+   "stage": "idea",
+   "description": "Translates approved comms into Spanish and other languages with terminology control and human review.",
+   "impact": 4,
+   "feasibility": 4,
+   "scalability": 5,
+   "risk": 2,
+   "eu_ai_act": "limited",
+   "dpia_done": true,
+   "human_in_loop": true,
+   "est_hours_saved_month": 260,
+   "build_cost_gbp": 22000,
+   "run_cost_gbp_year": 12000,
+   "module": "",
+   "live_regions": [],
+   "planned_regions": [
+    "Spain",
+    "Mexico"
+   ]
+  },
+  {
+   "id": "UC08",
+   "name": "Client Newsletter Personalisation",
+   "function": "Marketing",
+   "scope": "Local UK",
+   "stage": "idea",
+   "description": "Tailors approved newsletter modules to client segments.",
+   "impact": 4,
+   "feasibility": 3,
+   "scalability": 3,
+   "risk": 3,
+   "eu_ai_act": "limited",
+   "dpia_done": false,
+   "human_in_loop": true,
+   "est_hours_saved_month": 240,
+   "build_cost_gbp": 45000,
+   "run_cost_gbp_year": 22000,
+   "module": "",
+   "live_regions": [],
+   "planned_regions": [
+    "UK"
+   ]
+  },
+  {
+   "id": "UC09",
+   "name": "Campaign Performance Insights Agent",
+   "function": "Marketing",
+   "scope": "Local UK",
+   "stage": "assessed",
+   "description": "Natural-language questions over campaign and CRM data, with the query shown for every answer.",
+   "impact": 4,
+   "feasibility": 3,
+   "scalability": 4,
+   "risk": 2,
+   "eu_ai_act": "minimal",
+   "dpia_done": true,
+   "human_in_loop": true,
+   "est_hours_saved_month": 300,
+   "build_cost_gbp": 40000,
+   "run_cost_gbp_year": 18000,
+   "module": "",
+   "live_regions": [],
+   "planned_regions": [
+    "UK",
+    "Global"
+   ]
+  },
+  {
+   "id": "UC10",
+   "name": "Event and Webinar Follow-up Automation (low-code)",
+   "function": "Marketing",
+   "scope": "Local UK",
+   "stage": "assessed",
+   "description": "Workflow automation: registrations, reminders and follow-ups from the events calendar.",
+   "impact": 2,
+   "feasibility": 5,
+   "scalability": 3,
+   "risk": 1,
+   "eu_ai_act": "minimal",
+   "dpia_done": true,
+   "human_in_loop": true,
+   "est_hours_saved_month": 90,
+   "build_cost_gbp": 6000,
+   "run_cost_gbp_year": 3000,
+   "module": "",
+   "live_regions": [],
+   "planned_regions": [
+    "UK"
+   ]
+  },
+  {
+   "id": "UC11",
+   "name": "Automatic CV Screening and Rejection",
+   "function": "Talent & Culture",
+   "scope": "Local UK",
+   "stage": "idea",
+   "description": "Would reject applicants automatically on a model score, with no human review.",
+   "impact": 3,
+   "feasibility": 3,
+   "scalability": 3,
+   "risk": 5,
+   "eu_ai_act": "high",
+   "dpia_done": false,
+   "human_in_loop": false,
+   "est_hours_saved_month": 350,
+   "build_cost_gbp": 50000,
+   "run_cost_gbp_year": 20000,
+   "module": "",
+   "live_regions": [],
+   "planned_regions": []
+  },
+  {
+   "id": "UC12",
+   "name": "Onboarding Buddy Agent",
+   "function": "Talent & Culture",
+   "scope": "Global",
+   "stage": "assessed",
+   "description": "Answers new joiners' first-90-days questions and nudges them through mandatory tasks.",
+   "impact": 3,
+   "feasibility": 4,
+   "scalability": 5,
+   "risk": 2,
+   "eu_ai_act": "limited",
+   "dpia_done": true,
+   "human_in_loop": true,
+   "est_hours_saved_month": 180,
+   "build_cost_gbp": 24000,
+   "run_cost_gbp_year": 12000,
+   "module": "",
+   "live_regions": [],
+   "planned_regions": [
+    "UK",
+    "Spain"
+   ]
+  },
+  {
+   "id": "UC13",
+   "name": "Media Monitoring and Sentiment Summary",
+   "function": "Communications",
+   "scope": "Global",
+   "stage": "idea",
+   "description": "Daily digest of coverage about the bank and competitors, with links to sources.",
+   "impact": 3,
+   "feasibility": 4,
+   "scalability": 4,
+   "risk": 2,
+   "eu_ai_act": "minimal",
+   "dpia_done": true,
+   "human_in_loop": true,
+   "est_hours_saved_month": 140,
+   "build_cost_gbp": 20000,
+   "run_cost_gbp_year": 14000,
+   "module": "",
+   "live_regions": [],
+   "planned_regions": [
+    "Global"
+   ]
+  },
+  {
+   "id": "UC14",
+   "name": "Employee Survey Comment Analysis",
+   "function": "Talent & Culture",
+   "scope": "Global",
+   "stage": "assessed",
+   "description": "Themes and sentiment across free-text survey comments; small groups are suppressed.",
+   "impact": 4,
+   "feasibility": 3,
+   "scalability": 4,
+   "risk": 3,
+   "eu_ai_act": "limited",
+   "dpia_done": false,
+   "human_in_loop": true,
+   "est_hours_saved_month": 200,
+   "build_cost_gbp": 28000,
+   "run_cost_gbp_year": 12000,
+   "module": "",
+   "live_regions": [],
+   "planned_regions": [
+    "Global"
+   ]
+  }
+ ]
+}

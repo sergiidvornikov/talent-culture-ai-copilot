@@ -1,0 +1,10 @@
+{
+  "_note": "Synthetic, voluntarily disclosed diversity data. Held separately from talent data. Used ONLY to audit outcomes, never as an input to matching or scoring.",
+  "records": {
+    "E01": {"ethnicity": "White"}, "E02": {"ethnicity": "White"}, "E03": {"ethnicity": "Asian"},
+    "E04": {"ethnicity": "White"}, "E05": {"ethnicity": "White"}, "E06": {"ethnicity": "Asian"},
+    "E07": {"ethnicity": "Black"}, "E08": {"ethnicity": "White"}, "E09": {"ethnicity": "White"},
+    "E10": {"ethnicity": "Black"}, "E11": {"ethnicity": "Mixed"}, "E12": {"ethnicity": "Asian"},
+    "E13": {"ethnicity": "Black"}, "E14": {"ethnicity": "Prefer not to say"}, "E15": {"ethnicity": "Other"}
+  }
+}

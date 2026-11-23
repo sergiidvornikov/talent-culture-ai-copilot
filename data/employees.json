@@ -1,0 +1,122 @@
+[
+ {
+  "id": "E01",
+  "name": "Laura Méndez",
+  "age": 34,
+  "gender": "female",
+  "current_role": "HR Business Partner",
+  "profile": "HR business partner for CIB Markets. Runs performance review cycles and employee relations cases. Built an AI assistant prototype with ChatGPT to answer policy questions and wrote prompt design guidelines for the team. Led the adoption of a new HR system as part of an organisational change programme. Works closely with senior management stakeholders. Fluent Spanish and English."
+ },
+ {
+  "id": "E02",
+  "name": "Tom Fletcher",
+  "age": 29,
+  "gender": "male",
+  "current_role": "Data Analyst, Finance",
+  "profile": "Data analyst producing KPI reporting and dashboards in Power BI. Writes SQL against Snowflake and Python (pandas) scripts to automate month-end analysis. Presented findings to the CFO's team. Built a simple predictive model for cost forecasting."
+ },
+ {
+  "id": "E03",
+  "name": "Priya Nair",
+  "age": 41,
+  "gender": "female",
+  "current_role": "KYC Operations Manager",
+  "profile": "Manages a team of eight KYC analysts as line manager. Owns client onboarding checks, sanctions screening and AML escalations. Led a lean process improvement project that streamlined periodic reviews. Regular contact with Compliance and FCA regulatory requirements."
+ },
+ {
+  "id": "E04",
+  "name": "James O'Connor",
+  "age": 52,
+  "gender": "male",
+  "current_role": "Senior Relationship Manager",
+  "profile": "Relationship manager covering mid-cap corporate clients. Strong origination and new business pipeline. Structures loan facilities with the credit team and reviews covenants. Builds cash-flow forecast models for client lending proposals and presents to the credit committee."
+ },
+ {
+  "id": "E05",
+  "name": "Sofia Rossi",
+  "age": 27,
+  "gender": "female",
+  "current_role": "Marketing Executive",
+  "profile": "Runs digital marketing campaigns, social media and SEO for the CIB brand. Writes the monthly client newsletter and press release drafts. Uses Tableau dashboards to report campaign analytics."
+ },
+ {
+  "id": "E06",
+  "name": "Daniel Kim",
+  "age": 31,
+  "gender": "male",
+  "current_role": "Software Engineer",
+  "profile": "Backend engineer building REST APIs and integration services in Python. Built a RAG-based LLM chatbot proof of concept for the operations team. Works in Scrum sprints using Jira. Speaks German."
+ },
+ {
+  "id": "E07",
+  "name": "Amara Okafor",
+  "age": 38,
+  "gender": "female",
+  "current_role": "Learning & Development Specialist",
+  "profile": "Designs e-learning modules and facilitates workshops for new joiners. Built the onboarding curriculum with the talent management team. Experimenting with generative AI to draft training content. Presented at the HR leadership offsite."
+ },
+ {
+  "id": "E08",
+  "name": "Marco Bianchi",
+  "age": 45,
+  "gender": "male",
+  "current_role": "Credit Risk Manager",
+  "profile": "Credit risk manager performing credit analysis and credit underwriting for leveraged and growth loans. Builds financial models and valuation work, sets covenants, and presents to the risk committee. Strong risk management background across market risk and operational risk."
+ },
+ {
+  "id": "E09",
+  "name": "Hannah Weiss",
+  "age": 33,
+  "gender": "female",
+  "current_role": "Internal Communications Lead",
+  "profile": "Leads internal communications for the London office: all-staff newsletter, intranet editorial and leadership messaging. Supported communications for an organisational change programme and worked with senior stakeholders across business lines. Works in English and French."
+ },
+ {
+  "id": "E10",
+  "name": "Oliver Grant",
+  "age": 36,
+  "gender": "male",
+  "current_role": "Project Manager, Change",
+  "profile": "Project manager delivering transformation programme workstreams using Agile and Jira. Managed projects to roll out workflow automation with Power Automate. Change management certified (Prosci). Coordinates cross-functional stakeholders."
+ },
+ {
+  "id": "E11",
+  "name": "Lucía Fernández",
+  "age": 26,
+  "gender": "female",
+  "current_role": "Graduate Analyst, Growth Lending",
+  "profile": "Graduate analyst supporting credit analysis on venture lending deals. Builds financial model drafts and writes investment memos. Learning SQL for portfolio monitoring. Native Spanish speaker."
+ },
+ {
+  "id": "E12",
+  "name": "Rahul Mehta",
+  "age": 44,
+  "gender": "male",
+  "current_role": "Compliance Officer",
+  "profile": "Compliance officer advising on MiFID and FCA regulation. Leads GDPR data protection reviews for new systems including AI tools. Performs risk assessment and due diligence on third-party vendors."
+ },
+ {
+  "id": "E13",
+  "name": "Chloé Martin",
+  "age": 30,
+  "gender": "female",
+  "current_role": "Talent Acquisition Partner",
+  "profile": "Talent acquisition partner managing recruitment for technology roles. Uses an AI assistant and prompts to draft job descriptions. Runs workshops on interview skills and reports hiring analytics to stakeholders."
+ },
+ {
+  "id": "E14",
+  "name": "Peter Novak",
+  "age": 49,
+  "gender": "male",
+  "current_role": "Operations Team Lead",
+  "profile": "Team lead managing a team of 12 in trade settlements. Ran six sigma process improvement initiatives and automated reconciliations with RPA. Mentored junior staff and handled operational risk incidents."
+ },
+ {
+  "id": "E15",
+  "name": "Elena Petrova",
+  "age": 39,
+  "gender": "female",
+  "current_role": "Business Analyst, Digital",
+  "profile": "Business analyst on digital transformation programme. Wrote requirements for an LLM-based document search tool and tested prompts. Python scripting for data analysis, Agile delivery in Jira, and change management for user adoption across stakeholders."
+ }
+]

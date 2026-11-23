@@ -1,0 +1,18 @@
+[
+  {"id": "C01", "title": "AI Academy: Generative AI Foundations", "hours": 6, "skills": ["llm_genai"]},
+  {"id": "C02", "title": "AI Academy: Prompt Engineering in Practice", "hours": 4, "skills": ["prompt_engineering", "llm_genai"]},
+  {"id": "C03", "title": "Python for Business Analysts", "hours": 20, "skills": ["python", "data_analysis"]},
+  {"id": "C04", "title": "SQL Essentials", "hours": 10, "skills": ["sql"]},
+  {"id": "C05", "title": "Building Automations with Low-Code Tools", "hours": 8, "skills": ["automation_lowcode", "api_integration"]},
+  {"id": "C06", "title": "Change Management Fundamentals", "hours": 12, "skills": ["change_management"]},
+  {"id": "C07", "title": "Agile Delivery with Jira", "hours": 8, "skills": ["agile", "project_management"]},
+  {"id": "C08", "title": "Credit Analysis for Growth Companies", "hours": 24, "skills": ["credit_analysis", "risk_management"]},
+  {"id": "C09", "title": "Financial Modelling Bootcamp", "hours": 16, "skills": ["financial_modelling"]},
+  {"id": "C10", "title": "Financial Crime: KYC and AML Advanced", "hours": 12, "skills": ["kyc_aml", "regulatory_compliance"]},
+  {"id": "C11", "title": "First-Time Line Manager Programme", "hours": 18, "skills": ["people_leadership"]},
+  {"id": "C12", "title": "Writing for Internal Audiences", "hours": 6, "skills": ["communications_writing"]},
+  {"id": "C13", "title": "Designing Learning Experiences", "hours": 10, "skills": ["learning_design"]},
+  {"id": "C14", "title": "GDPR and Responsible AI for Practitioners", "hours": 5, "skills": ["data_privacy"]},
+  {"id": "C15", "title": "HR Fundamentals for Business Partners", "hours": 12, "skills": ["hr_talent"]},
+  {"id": "C16", "title": "Data Visualisation and Dashboards", "hours": 8, "skills": ["data_analysis", "presentation"]}
+]
