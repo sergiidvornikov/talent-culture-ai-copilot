@@ -7,7 +7,7 @@ import streamlit as st
 from assistant import PolicyAssistant
 import pandas as pd
 
-from assistant import comms, fairness, llm, portfolio, recruiting
+from assistant import comms, fairness, intents, llm, portfolio, recruiting
 from assistant.mobility import MobilityCopilot, label, learning_plan
 
 
@@ -47,7 +47,16 @@ def policy_page() -> None:
             if sources:
                 st.caption("Sources: " + " · ".join(sources))
 
-    if question := st.chat_input("Ask about leave, expenses, hybrid working… / Pregunta sobre vacaciones, gastos, teletrabajo…"):
+    if not st.session_state.history:
+        st.caption("Try a question / Prueba una pregunta:")
+        examples = intents.EXAMPLES["es" if lang == "es" else "en"]
+        cols = st.columns(len(examples))
+        for col, ex in zip(cols, examples):
+            if col.button(ex, key=f"ex_{ex}", width="stretch"):
+                st.session_state.queued_question = ex
+
+    typed = st.chat_input("Ask about leave, expenses, careers, hybrid working… / Pregunta sobre vacaciones, gastos, carrera…")
+    if question := (typed or st.session_state.pop("queued_question", None)):
         st.session_state.history.append(("user", question, []))
         with st.chat_message("user"):
             st.markdown(question)

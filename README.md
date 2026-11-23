@@ -32,6 +32,7 @@ question ─► Guardrails ─► Retrieval ─► Grounded answer ─► Usage 
 | Coverage check | If the policies don't cover the question, it says so rather than guessing |
 | Grounded answers | The LLM answers only from retrieved text, cites each statement, replies in the employee's language |
 | Usage dashboard | Adoption, referral rate and the policies that generate the most questions |
+| Help and routing | "What can you do?" lists every policy topic with example questions; "What jobs are open?" lists live internal vacancies and points to the Internal Mobility module; unanswered questions suggest what it can help with |
 
 ## 2. Internal Mobility Copilot
 
@@ -134,8 +135,8 @@ The policy assistant detects the language of the question (a transparent functio
 
 ```
 python eval/run_eval.py              # policy assistant (English)
-  Retrieval hit rate (top 3): 16/16
-  Correct routing:            21/21  (answer / not found / escalate)
+  Retrieval hit rate (top 3): 18/18
+  Correct routing:            25/25  (answer / not found / escalate / help)
   PII redaction test:         pass
 
 python eval/run_mobility_eval.py     # internal mobility
@@ -166,11 +167,11 @@ python eval/run_portfolio_eval.py    # AI portfolio
   Monitoring:                 adoption within 0-100%, 2 flags raised for the review
 
 python eval/run_spanish_eval.py      # Spanish policy path
-  Routing:                    19/19 (answer / not found / escalate)
-  Retrieval:                  14/14 in the top 3; correct section ranked first 14/14
-  Language detection:         21/21 English and 19/19 Spanish questions
+  Routing:                    21/21 (answer / not found / escalate / help)
+  Retrieval:                  15/15 in the top 3; correct section ranked first 15/15
+  Language detection:         25/25 English and 21/21 Spanish questions
   PII (DNI, NIE, +34 phone):  masked
-  Policy parity:              23 sections in 5 documents; 0 sections whose figures differ from English
+  Policy parity:              28 sections in 6 documents; 0 sections whose figures differ from English
 
 python eval/run_all.py               # all seven, one PASS/FAIL line each
 ```

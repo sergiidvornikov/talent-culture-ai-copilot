@@ -19,3 +19,7 @@
 {"question": "What is the pension contribution?", "expected_status": "not_found"}
 {"question": "I want to report harassment by my manager", "expected_status": "escalated"}
 {"question": "I think my redundancy was unfair, what can I do?", "expected_status": "escalated"}
+{"question": "How can I get a higher level job?", "expected_status": "answered", "expected_source": "careers-mobility.md § Promotion"}
+{"question": "Can I apply for another role internally?", "expected_status": "answered", "expected_source": "careers-mobility.md § Applying for an internal role"}
+{"question": "What kind of jobs are available?", "expected_status": "answered"}
+{"question": "What do you know?", "expected_status": "help"}

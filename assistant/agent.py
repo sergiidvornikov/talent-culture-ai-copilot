@@ -8,7 +8,7 @@ from dataclasses import asdict, dataclass, field
 from datetime import datetime, timezone
 from pathlib import Path
 
-from . import guardrails, llm
+from . import guardrails, intents, llm
 from .retriever import BM25Retriever, load_chunks
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -25,7 +25,7 @@ ESCALATE_ES = ("Este asunto parece delicado y debe tratarlo una persona. Por fav
 class Answer:
     question: str
     text: str
-    status: str                       # answered | not_found | escalated
+    status: str                       # answered | not_found | escalated | help
     sources: list[str] = field(default_factory=list)
     pii_redacted: list[str] = field(default_factory=list)
     top_score: float = 0.0
@@ -61,12 +61,17 @@ class PolicyAssistant:
 
         if guardrails.needs_escalation(clean):
             answer = Answer(clean, ESCALATE_ES if es else ESCALATE, "escalated", pii_redacted=pii)
+        elif intents.is_help(clean, lang):
+            answer = Answer(clean, intents.help_text(retriever.chunks, lang), "help", pii_redacted=pii)
+        elif intents.is_vacancies(clean, lang):
+            text, sources = intents.vacancies_text(lang)
+            answer = Answer(clean, text, "answered", sources, pii, 1.0)
         else:
             hits = retriever.search(clean, k=self.top_k)
             top = max((retriever.coverage(clean, c) for c, _ in hits), default=0.0)
             if top < self.min_coverage:
-                answer = Answer(clean, NOT_FOUND_ES if es else NOT_FOUND, "not_found",
-                                pii_redacted=pii, top_score=top)
+                text = (NOT_FOUND_ES if es else NOT_FOUND) + intents.not_found_suffix(retriever.chunks, lang)
+                answer = Answer(clean, text, "not_found", pii_redacted=pii, top_score=top)
             else:
                 excerpts = [f"({c.citation}) {c.text}" for c, _ in hits]
                 text = llm.generate(clean, excerpts, lang)

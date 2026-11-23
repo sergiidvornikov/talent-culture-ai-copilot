@@ -17,7 +17,7 @@ STOPWORDS = {
     "be", "can", "i", "my", "me", "do", "does", "how", "what", "when", "where",
     "which", "who", "it", "at", "by", "with", "from", "if", "as", "this", "that",
     "you", "your", "we", "our", "much", "many", "am", "there", "any", "should",
-    "will", "would", "need", "have", "has", "get", "per",
+    "will", "would", "need", "have", "has", "get", "per", "another", "kind", "type", "sort",
 }
 
 
@@ -30,6 +30,10 @@ SYNONYMS = {
     "fly": ["flight"], "plane": ["flight"], "train": ["rail"],
     "dinner": ["entertainment"], "lunch": ["entertainment"],
     "course": ["learning"], "training": ["learning"],
+    "job": ["role", "vacancy"], "jobs": ["role", "vacancy"], "position": ["role", "vacancy"],
+    "opening": ["vacancy"], "openings": ["vacancy"], "promoted": ["promotion"],
+    "senior": ["promotion", "level"], "higher": ["promotion", "level"], "career": ["promotion"],
+    "internally": ["internal"], "move": ["internal", "role"], "transfer": ["internal", "secondment"],
 }
 
 
@@ -56,6 +60,9 @@ SYNONYMS_ES = {
     "ordenador": ["portatil"], "computadora": ["portatil"],
     "aprobacion": ["aprobadas"], "aprobar": ["aprobadas"], "autorizacion": ["aprobadas"],
     "ano": ["anuales", "derecho"], "oficina": ["asistencia"], "presencial": ["asistencia"],
+    "trabajo": ["puesto", "vacante"], "empleo": ["puesto", "vacante"], "ascenso": ["promocion"],
+    "ascender": ["promocion", "nivel"], "superior": ["promocion", "nivel"], "carrera": ["promocion"],
+    "cambiar": ["interno", "puesto"], "traslado": ["interno", "comision"],
 }
 
 

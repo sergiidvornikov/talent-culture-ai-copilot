@@ -64,7 +64,7 @@ def main() -> int:
     print("1. Offline by default")
     set_env()
     check("no provider set -> offline", not llm.is_enabled() and llm.describe() == "offline")
-    check("offline policy answer still works", "Offline mode" in llm.generate("q", ["text"]))
+    check("offline policy answer still works", "Shown as written" in llm.generate("q", ["(leave.md § Carry-over) text"]))
     set_env(LLM_PROVIDER="openai", LLM_API_KEY="k")
     check("provider without a model stays offline", not llm.is_enabled())
 

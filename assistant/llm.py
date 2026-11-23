@@ -117,8 +117,13 @@ def generate(question: str, excerpts: list[str], lang: str = "en") -> str:
 
 
 def _offline_answer(excerpts: list[str], lang: str = "en") -> str:
-    if lang == "es":
-        return ("(Modo sin conexión, sin modelo configurado. Texto de política más relevante:)\n\n"
-                f"{excerpts[0]} [1]")
-    return ("(Offline mode, no model configured. Most relevant policy text:)\n\n"
-            f"{excerpts[0]} [1]")
+    """No model: show the best-matching policy section itself, cleanly, with its citation."""
+    import re
+
+    m = re.match(r"\((.+?) § (.+?)\)\s*(.*)", excerpts[0], re.S)
+    section, body = (m.group(2), m.group(3)) if m else ("", excerpts[0])
+    note = ("_Texto de la política tal cual. Con un modelo conectado, se convierte en una respuesta "
+            "breve y redactada._" if lang == "es" else
+            "_Shown as written in the policy. With a model connected, this becomes a short written answer._")
+    title = f"**{section}**\n\n" if section else ""
+    return f"{title}{body.strip()} [1]\n\n{note}"

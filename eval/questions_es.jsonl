@@ -17,3 +17,5 @@
 {"question": "¿Cuál es la aportación al plan de pensiones?", "expected_status": "not_found"}
 {"question": "Quiero denunciar acoso por parte de mi jefe", "expected_status": "escalated"}
 {"question": "Creo que mi despido fue injusto, ¿qué puedo hacer?", "expected_status": "escalated"}
+{"question": "¿Cómo puedo conseguir un ascenso?", "expected_status": "answered", "expected_source": "careers-mobility.md § Promoción"}
+{"question": "¿Qué vacantes hay?", "expected_status": "answered"}
