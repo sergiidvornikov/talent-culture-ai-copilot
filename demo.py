@@ -7,7 +7,7 @@ import os
 import tempfile
 from pathlib import Path
 
-os.environ.pop("ANTHROPIC_API_KEY", None)   # keep the demo offline and repeatable
+os.environ["LLM_PROVIDER"] = "offline"   # keep the demo offline and repeatable
 
 from assistant import PolicyAssistant, comms, portfolio  # noqa: E402
 

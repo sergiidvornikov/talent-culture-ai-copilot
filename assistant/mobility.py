@@ -8,11 +8,12 @@ Design principles (high-risk HR AI under the EU AI Act):
 from __future__ import annotations
 
 import json
-import os
 import re
 from dataclasses import asdict, dataclass, field
 from datetime import datetime, timezone
 from pathlib import Path
+
+from . import llm
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
@@ -44,7 +45,7 @@ def extract_skills(text: str) -> list[str]:
     combined so the LLM can catch skills described in unusual words.
     """
     found = _keyword_skills(text)
-    if os.getenv("ANTHROPIC_API_KEY"):
+    if llm.is_enabled():
         found |= _llm_skills(text)
     return sorted(found)
 
@@ -61,18 +62,13 @@ def _keyword_skills(text: str) -> set[str]:
 
 
 def _llm_skills(text: str) -> set[str]:
-    import anthropic
-
     catalogue = "\n".join(f"{sid}: {s['label']}" for sid, s in SKILLS.items())
-    msg = anthropic.Anthropic().messages.create(
-        model=os.getenv("HR_ASSISTANT_MODEL", "claude-sonnet-5-5"),
-        max_tokens=300, temperature=0,
+    reply = llm.complete(
         system=("Identify which skills from the catalogue the profile shows clear evidence of. "
                 "Reply with a JSON array of skill IDs only. Never infer skills without evidence."),
-        messages=[{"role": "user", "content": f"Catalogue:\n{catalogue}\n\nProfile:\n{text}"}],
-    )
+        user=f"Catalogue:\n{catalogue}\n\nProfile:\n{text}", max_tokens=300, temperature=0)
     try:
-        ids = json.loads(re.search(r"\[.*\]", msg.content[0].text, re.S).group(0))
+        ids = json.loads(re.search(r"\[.*\]", reply, re.S).group(0))
     except (AttributeError, json.JSONDecodeError):
         return set()
     return {i for i in ids if i in SKILLS}          # anything outside the taxonomy is discarded

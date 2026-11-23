@@ -1,3 +1,5 @@
-anthropic>=0.40
 streamlit>=1.50
 pandas>=2.0
+# Optional, only when a model is configured (see .env.example):
+# openai>=1.40      # OpenAI, Azure OpenAI, Gemini and OpenAI-compatible gateways
+# anthropic>=0.40   # Anthropic

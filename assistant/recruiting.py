@@ -8,12 +8,12 @@ from __future__ import annotations
 
 import hashlib
 import json
-import os
 import re
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from pathlib import Path
 
+from . import llm
 from .mobility import DATA, ROOT, label
 
 MUST_WEIGHT, NICE_WEIGHT = 2, 1
@@ -71,7 +71,7 @@ def check_language(text: str, essential_count: int | None = None) -> list[Findin
 def draft_job_description(role: dict) -> str:
     """Draft from the structured role. With an API key the LLM writes the prose;
     the offline template is used otherwise. Both go through the same check."""
-    if os.getenv("ANTHROPIC_API_KEY"):
+    if llm.is_enabled():
         try:
             return _llm_jd(role)
         except Exception:
@@ -94,20 +94,15 @@ def _template_jd(role: dict) -> str:
 
 
 def _llm_jd(role: dict) -> str:
-    import anthropic
-
     spec = json.dumps({**role, "must": [label(s) for s in role["must"]],
                        "nice": [label(s) for s in role["nice"]]}, ensure_ascii=False)
-    msg = anthropic.Anthropic().messages.create(
-        model=os.getenv("HR_ASSISTANT_MODEL", "claude-sonnet-5-5"), max_tokens=900, temperature=0.3,
+    return llm.complete(
         system=("Write a clear, inclusive job advert in markdown from the structured role. "
                 "Use only the facts given. List essential and good-to-have skills separately. "
                 "Avoid gender-coded, age-related and jargon-heavy wording. No years-of-experience "
                 "requirements. Under 350 words. End with a 'How we hire' section on structured, "
                 "fair interviews and adjustments."),
-        messages=[{"role": "user", "content": spec}],
-    )
-    return msg.content[0].text
+        user=spec, max_tokens=900, temperature=0.3)
 
 
 # ---- 3. Interview kit ----------------------------------------------------------------

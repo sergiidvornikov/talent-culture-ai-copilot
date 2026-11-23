@@ -7,7 +7,7 @@ import streamlit as st
 from assistant import PolicyAssistant
 import pandas as pd
 
-from assistant import comms, fairness, portfolio, recruiting
+from assistant import comms, fairness, llm, portfolio, recruiting
 from assistant.mobility import MobilityCopilot, label, learning_plan
 
 
@@ -27,6 +27,7 @@ def get_mobility() -> MobilityCopilot:
 module = st.sidebar.radio("Module", ["Policy Assistant", "Internal Mobility", "Recruiting Workflow",
                                      "Fairness Audit", "Communications Studio", "AI Portfolio"])
 st.sidebar.caption("Demo using fictional Northbank CIB data. Runs offline; no API key needed.")
+st.sidebar.caption(f"Model: {llm.describe()} (set LLM_PROVIDER to use any provider or the bank's gateway)")
 
 
 # ---- Module 1: Policy assistant ---------------------------------------------------

@@ -10,7 +10,7 @@ import tempfile
 from dataclasses import replace
 from pathlib import Path
 
-os.environ.pop("ANTHROPIC_API_KEY", None)
+os.environ["LLM_PROVIDER"] = "offline"
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 

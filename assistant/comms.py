@@ -11,13 +11,12 @@ from __future__ import annotations
 import difflib
 import hashlib
 import json
-import os
 import re
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
 
-from . import guardrails, recruiting
+from . import guardrails, llm, recruiting
 from .mobility import DATA, ROOT
 
 AUDIT_LOG = ROOT / "logs" / "comms_audit.jsonl"
@@ -71,7 +70,7 @@ def disclaimer(kind: str, lang: str) -> str:
 def draft(brief: Brief) -> tuple[str, str]:
     """Return (text, source). With an API key the LLM writes the prose under the brand
     rules; otherwise a template is used. Both go through the same checks."""
-    if os.getenv("ANTHROPIC_API_KEY"):
+    if llm.is_enabled():
         try:
             return _llm_draft(brief), "llm"
         except Exception:
@@ -104,19 +103,14 @@ def _template_draft(b: Brief) -> str:
 
 
 def _llm_draft(b: Brief) -> str:
-    import anthropic
-
     rules = ("Write in the bank's plain, professional, warm voice. No hype, no superlatives, "
              "no guarantees or performance claims, no invented facts, no invented quotes. "
              "Use only the facts in the brief. Keep placeholders in [square brackets] for "
              "anything missing. End external texts with this disclaimer, unchanged: "
              f"{disclaimer(b.kind, b.lang)}")
-    client = anthropic.Anthropic()
-    r = client.messages.create(
-        model=os.getenv("HR_ASSISTANT_MODEL", "claude-sonnet-5-5"), max_tokens=900, temperature=0.3,
+    return llm.complete(
         system=f"You draft {KINDS[b.kind]['label'].lower()}s for Northbank CIB in {LANGS[b.lang]}. {rules}",
-        messages=[{"role": "user", "content": json.dumps(b.__dict__, ensure_ascii=False)}])
-    return r.content[0].text
+        user=json.dumps(b.__dict__, ensure_ascii=False), max_tokens=900, temperature=0.3)
 
 
 # ---- 2. Brand, tone and compliance check ----------------------------------------------------

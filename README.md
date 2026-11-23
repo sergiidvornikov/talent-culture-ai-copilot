@@ -30,7 +30,7 @@ question ─► Guardrails ─► Retrieval ─► Grounded answer ─► Usage 
 | PII redaction | Masks emails, phone, NI and card numbers before anything reaches the model |
 | Escalation | Grievance, harassment, redundancy etc. go straight to a person (English and Spanish) |
 | Coverage check | If the policies don't cover the question, it says so rather than guessing |
-| Grounded answers | Claude answers only from retrieved text, cites each statement, replies in the employee's language |
+| Grounded answers | The LLM answers only from retrieved text, cites each statement, replies in the employee's language |
 | Usage dashboard | Adoption, referral rate and the policies that generate the most questions |
 
 ## 2. Internal Mobility Copilot
@@ -45,7 +45,7 @@ profile text ─► Anonymise ─► Skills extraction ─► Explainable match 
 
 - **Employee view:** "Which internal roles fit me, and what would get me there?"
 - **Recruiter view:** an anonymised internal shortlist for any open role.
-- **Skills extraction:** a transparent keyword method against the taxonomy; with an API key, Claude also reads the profile but may only answer with skills from the taxonomy (anything else is discarded).
+- **Skills extraction:** a transparent keyword method against the taxonomy; with a model configured, the LLM also reads the profile but may only answer with skills from the taxonomy (anything else is discarded).
 - **Scoring:** essential skills count double; a related skill earns half credit as "transferable" (e.g. SQL from Python), so adjacent talent isn't overlooked.
 
 ### Why the governance matters
@@ -172,20 +172,43 @@ python eval/run_spanish_eval.py      # Spanish policy path
   PII (DNI, NIE, +34 phone):  masked
   Policy parity:              23 sections in 5 documents; 0 sections whose figures differ from English
 
-python eval/run_all.py               # all six, one PASS/FAIL line each
+python eval/run_all.py               # all seven, one PASS/FAIL line each
 ```
 
 ## Run it
 
 ```bash
 pip install -r requirements.txt
-export ANTHROPIC_API_KEY=sk-ant-...     # optional: without it, every module runs offline
-streamlit run app.py
+streamlit run app.py                    # runs offline: no model or key needed
 python demo.py                          # bilingual walkthrough in the terminal
 python eval/run_all.py                  # run every evaluation
 ```
 
-The app needs no secrets and makes no network calls without an API key, so it runs as-is on Streamlit Community Cloud (main file `app.py`). Audit and usage logs are written to `logs/` (git-ignored) when the app is used.
+The app needs no secrets and makes no network calls unless a model is configured, so it runs as-is on Streamlit Community Cloud (main file `app.py`). Audit and usage logs are written to `logs/` (git-ignored) when the app is used.
+
+## Choosing a model
+
+The project is **model-agnostic**. Every module calls one function, `llm.complete()` in `assistant/llm.py`, and the provider is chosen with settings, not code changes:
+
+| `LLM_PROVIDER` | Use it for |
+|---|---|
+| `offline` (default) | No model: templates and keyword methods. The live demo runs this way. |
+| `gateway` | The bank's approved internal LLM endpoint (OpenAI-compatible), with its logging, filtering and data-residency controls. **The right choice in production.** |
+| `azure_openai` | An Azure OpenAI deployment |
+| `openai` | OpenAI (e.g. an enterprise licence) |
+| `gemini` | Google Gemini |
+| `anthropic` | Anthropic |
+
+```bash
+pip install openai            # or: pip install anthropic
+export LLM_PROVIDER=gateway
+export LLM_MODEL=<model or deployment name>
+export LLM_API_KEY=<key>
+export LLM_BASE_URL=https://<internal-llm-gateway>/v1
+streamlit run app.py
+```
+
+See `.env.example` for every setting. `eval/run_llm_eval.py` checks that each provider is called the same way and that no other module talks to a provider directly.
 
 ## Project structure
 
@@ -193,7 +216,7 @@ The app needs no secrets and makes no network calls without an API key, so it ru
 assistant/
   guardrails.py   PII redaction and escalation rules
   retriever.py    policy loading, BM25 ranking, coverage check
-  llm.py          prompt and model call (Claude), offline fallback
+  llm.py          the single model call for every module (any provider), offline fallback
   agent.py        policy assistant orchestration and usage log
   mobility.py     skills extraction, anonymisation, matching, learning plans, audit log
   recruiting.py   advert drafting, inclusive-language check, interview kit, scorecards, decision gate
@@ -204,7 +227,7 @@ data/             fictional employees, roles, courses, interview questions, skil
                   diversity data (synthetic, audit only), brand and compliance rules,
                   AI use-case register, synthetic adoption data
 policies/         fictional HR policies (English); policies/es/ holds the Spanish versions
-eval/             test sets and six evaluation scripts (run_all.py runs them together)
+eval/             test sets and seven evaluation scripts (run_all.py runs them together)
 app.py            Streamlit app with all six modules
 demo.py           bilingual, offline walkthrough
 ```
@@ -218,19 +241,19 @@ How the prototype lines up with the work of an AI transformation lead for these 
 | Identify and prioritise AI use cases | AI Portfolio: 14 use cases across Talent & Culture, Marketing and Communications, scored on impact, feasibility, scalability and risk with a visible formula, local and global scope, and a "score a new idea" form |
 | Assess feasibility and business case | Feasibility and scalability scores; hours saved against build and run cost, with payback; governance gates that can stop or hold an idea regardless of score |
 | Build GenAI apps, automations and self-service agents | Six working modules in Python: retrieval-grounded policy agent, skills-matching copilot, drafting workflows, a comms drafting assistant; LLM calls through an API with an offline fallback |
-| Use LLMs, APIs and prompt engineering | Constrained prompts (answer only from excerpts, cite each statement, fixed refusal text, bilingual), taxonomy-constrained skills extraction, brand-rule-constrained drafting |
+| Use LLMs, APIs and prompt engineering | Model-agnostic: one call point that works with OpenAI, Azure OpenAI, Gemini, Anthropic or an internal gateway. Constrained prompts (answer only from excerpts, cite each statement, fixed refusal text, bilingual), taxonomy-constrained skills extraction, brand-rule-constrained drafting |
 | Workflow automation and low-code thinking | Multi-step workflows with human approval gates; the portfolio includes a low-code automation use case; rules (brand, disclaimers, scoring weights) are in JSON that business teams can own |
 | Drive adoption and scale across geographies | Usage and adoption dashboards, monthly monitoring flags, and a view of which live tools are ready to roll out to new regions |
 | Governance, privacy and responsible AI | PII masking (UK and Spanish identifiers), escalation of sensitive topics, protected attributes removed before matching, fairness audit, audit logs with human sign-off, EU AI Act and DPIA gates in the portfolio |
 | Marketing and external communications | Communications Studio: on-brand drafting, claims and confidentiality checks, mandatory disclaimers, two-person approval for external text |
 | English and Spanish | Spanish policy assistant, Spanish comms drafting and checks, a bilingual demo, and a test that translated policies keep the same figures |
-| Measurable outcomes | Six evaluation scripts with explicit pass criteria, run before any policy, taxonomy, rule or prompt change |
+| Measurable outcomes | Seven evaluation scripts with explicit pass criteria, run before any policy, taxonomy, rule or prompt change |
 
 What it deliberately does not claim: the data is fictional and small, the adoption figures are synthetic, and it has not been through a real security, legal or model-risk review.
 
 ## Fitting it into a bank's existing stack
 Most large banks already own an HR suite, a skills platform and a communications and approvals process. The value of a tool like this is the **layer on top**: using the bank's approved LLM platform to make existing skills data, policies and brand rules useful in daily work. In production:
-- **Model access:** call models only through the bank's approved LLM gateway (logging, content filtering, data-residency and cost controls), not directly. The single call point in `assistant/llm.py` (and the comms draft function) is where that swap happens.
+- **Model access:** set `LLM_PROVIDER=gateway` so every call goes through the bank's approved LLM gateway (logging, content filtering, data-residency and cost controls). All modules share the single call point in `assistant/llm.py`, so nothing else changes.
 - **HR suite (for example Workday):** read employees, roles, skills and open vacancies from the HR system and skills platform instead of JSON files; write approved adverts and decisions to the ATS; keep diversity data in a separate, access-controlled store.
 - **Teams and intranet:** surface the policy assistant and the comms drafting in Teams or the intranet, with single sign-on, and open an HR ticket on escalation. Publishing stays with the channel owners.
 - **EU AI Act:** recruitment, promotion and task allocation are high-risk uses. That means a risk-management process, documented data governance, logging, human oversight, accuracy and robustness testing, and transparency to the people affected, and the portfolio's gates are the place to enforce it. Check requirements for each country the tool operates in.

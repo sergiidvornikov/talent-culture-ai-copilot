@@ -4,7 +4,8 @@ import sys
 from pathlib import Path
 
 SCRIPTS = ["run_eval.py", "run_mobility_eval.py", "run_recruiting_eval.py",
-           "run_comms_eval.py", "run_portfolio_eval.py", "run_spanish_eval.py"]
+           "run_comms_eval.py", "run_portfolio_eval.py", "run_spanish_eval.py",
+           "run_llm_eval.py"]
 
 
 def main() -> int:
