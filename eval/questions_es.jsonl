@@ -19,3 +19,11 @@
 {"question": "Creo que mi despido fue injusto, ¿qué puedo hacer?", "expected_status": "escalated"}
 {"question": "¿Cómo puedo conseguir un ascenso?", "expected_status": "answered", "expected_source": "careers-mobility.md § Promoción"}
 {"question": "¿Qué vacantes hay?", "expected_status": "answered"}
+{"question": "que puedo hacer promocion?", "expected_status": "answered", "expected_source": "careers-mobility.md § Promoción"}
+{"question": "¿Cómo puedo conseguir un aumento?", "expected_status": "answered", "expected_source": "pay-reward.md § Cómo se deciden los aumentos"}
+{"question": "¿Cómo consigo una subida de sueldo?", "expected_status": "answered", "expected_source": "pay-reward.md § Cómo se deciden los aumentos"}
+{"question": "¿Qué sabes?", "expected_status": "help"}
+{"question": "¿Qué puedes hacer?", "expected_status": "help"}
+{"question": "¿Cuál es el preaviso?", "expected_status": "answered", "expected_source": "employment-terms.md § Preaviso"}
+{"question": "cual es el plazo minimo de trabajo?", "expected_status": "answered", "expected_source": "employment-terms.md § Permanencia mínima"}
+{"question": "¿Cuándo son las evaluaciones del desempeño?", "expected_status": "answered", "expected_source": "performance-reviews.md § Evaluación anual del desempeño"}

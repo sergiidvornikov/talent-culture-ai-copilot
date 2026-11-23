@@ -15,7 +15,7 @@ GenAI tools for a bank's Talent & Culture, Marketing and Communications function
 
 ## 1. HR Policy Assistant
 
-**Problem.** Talent & Culture teams answer the same questions every day (*How many days can I carry over? Can I work from abroad?*). The answers are in long policy documents that employees don't read.
+**Problem.** Talent & Culture teams answer the same questions every day (*How many days can I carry over? Can I work from abroad? How do I get a raise?*). The answers are in long policy documents that employees don't read. The demo set covers leave, hybrid working, expenses, learning, onboarding, careers and internal mobility, pay and reward, employment terms, and performance reviews (English and Spanish).
 
 ```
 question ─► Guardrails ─► Retrieval ─► Grounded answer ─► Usage log
@@ -29,10 +29,10 @@ question ─► Guardrails ─► Retrieval ─► Grounded answer ─► Usage 
 |---|---|
 | PII redaction | Masks emails, phone, NI and card numbers before anything reaches the model |
 | Escalation | Grievance, harassment, redundancy etc. go straight to a person (English and Spanish) |
-| Coverage check | If the policies don't cover the question, it says so rather than guessing |
+| Coverage check | If the policies don't cover the question, it says so rather than guessing, names the closest topics and suggests example questions |
 | Grounded answers | The LLM answers only from retrieved text, cites each statement, replies in the employee's language |
 | Usage dashboard | Adoption, referral rate and the policies that generate the most questions |
-| Help and routing | "What can you do?" lists every policy topic with example questions; "What jobs are open?" lists live internal vacancies and points to the Internal Mobility module; unanswered questions suggest what it can help with |
+| Help and routing | "What can you do?" lists every policy topic with example questions; "What jobs are open?" lists live internal vacancies and points to the Internal Mobility module; unanswered job or internal-move questions are pointed at that module too |
 
 ## 2. Internal Mobility Copilot
 
@@ -135,8 +135,8 @@ The policy assistant detects the language of the question (a transparent functio
 
 ```
 python eval/run_eval.py              # policy assistant (English)
-  Retrieval hit rate (top 3): 18/18
-  Correct routing:            25/25  (answer / not found / escalate / help)
+  Retrieval hit rate (top 3): 30/30
+  Correct routing:            39/39  (answer / not found / escalate / help)
   PII redaction test:         pass
 
 python eval/run_mobility_eval.py     # internal mobility
@@ -167,11 +167,11 @@ python eval/run_portfolio_eval.py    # AI portfolio
   Monitoring:                 adoption within 0-100%, 2 flags raised for the review
 
 python eval/run_spanish_eval.py      # Spanish policy path
-  Routing:                    21/21 (answer / not found / escalate / help)
-  Retrieval:                  15/15 in the top 3; correct section ranked first 15/15
-  Language detection:         25/25 English and 21/21 Spanish questions
+  Routing:                    29/29 (answer / not found / escalate / help)
+  Retrieval:                  21/21 in the top 3; correct section ranked first 21/21
+  Language detection:         39/39 English and 29/29 Spanish questions
   PII (DNI, NIE, +34 phone):  masked
-  Policy parity:              28 sections in 6 documents; 0 sections whose figures differ from English
+  Policy parity:              42 sections in 9 documents; 0 sections whose figures differ from English
 
 python eval/run_all.py               # all seven, one PASS/FAIL line each
 ```

@@ -32,8 +32,15 @@ SYNONYMS = {
     "course": ["learning"], "training": ["learning"],
     "job": ["role", "vacancy"], "jobs": ["role", "vacancy"], "position": ["role", "vacancy"],
     "opening": ["vacancy"], "openings": ["vacancy"], "promoted": ["promotion"],
+    "promotion": ["promoted", "grade", "level"], "promotions": ["promotion", "grade"],
     "senior": ["promotion", "level"], "higher": ["promotion", "level"], "career": ["promotion"],
     "internally": ["internal"], "move": ["internal", "role"], "transfer": ["internal", "secondment"],
+    "raise": ["rise", "increase"], "raises": ["rise", "increase"],
+    "rise": ["raise", "increase"], "increment": ["raise", "increase"],
+    "timeframe": ["period", "notice", "probation", "service"],
+    "timeframes": ["period", "notice", "probation", "service"],
+    "appraisal": ["performance", "review", "rating"],
+    "appraisals": ["performance", "review", "rating"],
 }
 
 
@@ -45,6 +52,7 @@ STOPWORDS_ES = {
     "por", "puedo", "puede", "pueden", "que", "quien", "quiero", "se", "si", "son", "su", "sus",
     "tengo", "tiene", "tienen", "tu", "tus", "un", "una", "uno", "y", "ya", "hacer", "debo",
     "mucho", "mucha", "muchos", "muchas", "cada",
+    "conseguir", "consigo", "lograr", "obtengo", "obtener", "obtiene", "pide", "pedir",
 }
 
 SYNONYMS_ES = {
@@ -63,6 +71,15 @@ SYNONYMS_ES = {
     "trabajo": ["puesto", "vacante"], "empleo": ["puesto", "vacante"], "ascenso": ["promocion"],
     "ascender": ["promocion", "nivel"], "superior": ["promocion", "nivel"], "carrera": ["promocion"],
     "cambiar": ["interno", "puesto"], "traslado": ["interno", "comision"],
+    "promocion": ["ascenso", "nivel"], "promocionar": ["promocion", "ascenso"],
+    "aumento": ["subida", "incremento", "sueldo"], "aumentos": ["subida", "incremento"],
+    "subida": ["aumento", "incremento", "sueldo"], "incremento": ["aumento", "subida"],
+    "sueldo": ["salario", "aumento"], "salario": ["sueldo", "aumento"],
+    "plazo": ["preaviso", "prueba", "permanencia"], "plazos": ["preaviso", "prueba", "permanencia"],
+    "timeframe": ["preaviso", "prueba", "permanencia"],
+    "preaviso": ["aviso"], "permanencia": ["antiguedad", "servicio"],
+    "desempeno": ["evaluacion", "calificacion", "objetivos"],
+    "evaluacion": ["desempeno", "calificacion"], "evaluaciones": ["desempeno", "calificacion"],
 }
 
 
@@ -84,7 +101,8 @@ def _stem(word: str, lang: str = "en") -> str:
         return word
     if word.endswith("ing") and len(word) > 5:
         return word[:-3]
-    if word.endswith("s") and not word.endswith("ss") and len(word) > 3:
+    # Keep words such as "bonus" or "basis" intact; only treat a trailing "s" as a plural.
+    if word.endswith("s") and not word.endswith(("ss", "us", "is")) and len(word) > 3:
         return word[:-1]
     return word
 
@@ -92,10 +110,12 @@ def _stem(word: str, lang: str = "en") -> str:
 def tokenize(text: str, expand: bool = False, lang: str = "en") -> list[str]:
     stop, syn = (STOPWORDS_ES, SYNONYMS_ES) if lang == "es" else (STOPWORDS, SYNONYMS)
     text = fold(text) if lang == "es" else text.lower()
-    words = [w for w in re.findall(r"[a-z0-9£]+", text) if w not in stop]
+    words = [w for w in re.findall(r"[a-z0-9£]+", text) if w not in stop and len(w) > 1]
+    tokens = [_stem(w, lang) for w in words]
     if expand:
-        words += [s for w in words for s in syn.get(w, [])]
-    return [_stem(w, lang) for w in words if len(w) > 1]
+        extras = [s for w, t in zip(words, tokens) for s in syn.get(w, []) + syn.get(t, [])]
+        tokens += [_stem(s, lang) for s in extras]
+    return tokens
 
 
 @dataclass
@@ -150,8 +170,10 @@ class BM25Retriever:
         total = sum(self.idf.get(t, max_idf) for t in terms)
         hit = sum(self.idf.get(t, max_idf) for t in terms if t in tf)
         syn = SYNONYMS_ES if self.lang == "es" else SYNONYMS
+        def syn_stems(term: str) -> list[str]:
+            return [_stem(x, self.lang) for x in syn.get(term, [])]
         hit += sum(self.idf.get(s, 0) for t in terms if t not in tf
-                   for s in (_stem(x, self.lang) for x in syn.get(t, [])) if s in tf)
+                   for s in syn_stems(t) if s in tf)
         return min(hit / total, 1.0)
 
     def score(self, query: str, i: int) -> float:

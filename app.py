@@ -55,7 +55,7 @@ def policy_page() -> None:
             if col.button(ex, key=f"ex_{ex}", width="stretch"):
                 st.session_state.queued_question = ex
 
-    typed = st.chat_input("Ask about leave, expenses, careers, hybrid working… / Pregunta sobre vacaciones, gastos, carrera…")
+    typed = st.chat_input("Ask about leave, pay, careers, notice periods… / Pregunta sobre vacaciones, retribución, carrera…")
     if question := (typed or st.session_state.pop("queued_question", None)):
         st.session_state.history.append(("user", question, []))
         with st.chat_message("user"):

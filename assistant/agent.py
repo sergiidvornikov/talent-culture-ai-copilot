@@ -70,7 +70,8 @@ class PolicyAssistant:
             hits = retriever.search(clean, k=self.top_k)
             top = max((retriever.coverage(clean, c) for c, _ in hits), default=0.0)
             if top < self.min_coverage:
-                text = (NOT_FOUND_ES if es else NOT_FOUND) + intents.not_found_suffix(retriever.chunks, lang)
+                text = ((NOT_FOUND_ES if es else NOT_FOUND)
+                        + intents.not_found_suffix(retriever.chunks, lang, clean, hits))
                 answer = Answer(clean, text, "not_found", pii_redacted=pii, top_score=top)
             else:
                 excerpts = [f"({c.citation}) {c.text}" for c, _ in hits]

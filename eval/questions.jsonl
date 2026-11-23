@@ -23,3 +23,17 @@
 {"question": "Can I apply for another role internally?", "expected_status": "answered", "expected_source": "careers-mobility.md § Applying for an internal role"}
 {"question": "What kind of jobs are available?", "expected_status": "answered"}
 {"question": "What do you know?", "expected_status": "help"}
+{"question": "how can I get a raise?", "expected_status": "answered", "expected_source": "pay-reward.md § How raises are decided"}
+{"question": "How do I get a salary increase?", "expected_status": "answered", "expected_source": "pay-reward.md § How raises are decided"}
+{"question": "How do I get a pay rise?", "expected_status": "answered", "expected_source": "pay-reward.md § How raises are decided"}
+{"question": "When is the pay review?", "expected_status": "answered", "expected_source": "pay-reward.md § Pay review cycle"}
+{"question": "How is my bonus decided?", "expected_status": "answered", "expected_source": "pay-reward.md § Bonus"}
+{"question": "what's the minimum work timeframe?", "expected_status": "answered", "expected_source": "employment-terms.md § Minimum service"}
+{"question": "What is the notice period?", "expected_status": "answered", "expected_source": "employment-terms.md § Notice periods"}
+{"question": "How much notice do I have to give?", "expected_status": "answered", "expected_source": "employment-terms.md § Notice periods"}
+{"question": "What are the contracted working hours?", "expected_status": "answered", "expected_source": "employment-terms.md § Working hours"}
+{"question": "When are performance reviews?", "expected_status": "answered", "expected_source": "performance-reviews.md § Annual performance review"}
+{"question": "How do performance ratings work?", "expected_status": "answered", "expected_source": "performance-reviews.md § Ratings"}
+{"question": "What can you do?", "expected_status": "help"}
+{"question": "What jobs are open?", "expected_status": "answered"}
+{"question": "How do I get promoted?", "expected_status": "answered", "expected_source": "careers-mobility.md § Promotion"}
